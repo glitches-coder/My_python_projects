@@ -32,12 +32,12 @@ while game_on:
         scr_brd.adder()
 
     if sn.head.xcor() > 280 or sn.head.xcor() < -280 or sn.head.ycor() > 280 or sn.head.ycor() < -280:
-        game_on = False
-        scr_brd.game_over()
+        scr_brd.reset()
+        sn.reset()
 
     for seg in sn.turtles[1:]:
         if sn.head.distance(seg) < 10:
-            game_on = False
-            scr_brd.game_over()
+            scr_brd.reset()
+            sn.reset()
 
 s.exitonclick()
